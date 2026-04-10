@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mattespel", "Mattespel.csproj", "{2E8691D6-2C96-408A-95C6-6A32CDB21596}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E8691D6-2C96-408A-95C6-6A32CDB21596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8691D6-2C96-408A-95C6-6A32CDB21596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8691D6-2C96-408A-95C6-6A32CDB21596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8691D6-2C96-408A-95C6-6A32CDB21596}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {523A66A8-231D-41D3-B86E-DAF1285D524A}
+	EndGlobalSection
+EndGlobal
