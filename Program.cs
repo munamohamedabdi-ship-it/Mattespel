@@ -1,116 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
 
 Console.WriteLine("Välkommen till Matte quiz");
 Console.WriteLine("-------------------------");
 int points = 0;
-
-// Fråga 1
-Console.WriteLine("1. 3x+1=16");
-Console.WriteLine("A) 5");
-Console.WriteLine("B) 8");
-Console.WriteLine("C) 10");
-Console.WriteLine("D) 3");
-string svar1 = Console.ReadLine().Trim().ToUpper();
-if (svar1 == "A")
+//Lista med frågor,svaralternativ och rättsvar
+var frågor = new List<(string fråga, string[] alternativ, string rättsvar)>
 {
-    Console.WriteLine("Rätt svar bra jobbat");
-    points++;
-}
-else
+    // Fråga 1
+    ("1. 3x + 1 = 16", new[] { "A)5", "B)8", "C)10", "D)3" }, "A"),
+
+    // Fråga 2
+    ("2. Vilket tal är störst?", new[] { "A)1/2", "B)2/3", "C)3/5", "D)0.6" }, "B"),
+
+    // Fråga 3
+    ("3. Vad är 7 * 8?", new[] { "A)53", "B)78", "C)40", "D)56" }, "D")
+};
+// Loppar igenom vraje fråga i listan
+foreach (var f in frågor)
 {
-    Console.WriteLine("Fel svar tyvärr");
+    Console.WriteLine();
+    Console.WriteLine(f.fråga); //Skriver ut själva frågan
+    foreach (var alternativ in f.alternativ)
+    {
+        Console.WriteLine(alternativ);
+    }
+    //Läser in användarens svar, tar bort mellanslag omvandlar till stora bokstväer 
+    string svar = Console.ReadLine()?.Trim().ToUpper() ?? "";
+    //kollar om svaret är rätn
+    if (svar == f.rättsvar) 
+    {
+        Console.WriteLine("Rätt svar bra jobbat");
+        points++;
+    }
+    else
+    {
+        Console.WriteLine("Fel svar tyvärr");
+    }
 }
-
-// Fråga 2
-Console.WriteLine("2. Vad är 25% av 200");
-Console.WriteLine("A) 140");
-Console.WriteLine("B) 20");
-Console.WriteLine("C) 50");
-Console.WriteLine("D) 100");
-string svar2 = Console.ReadLine().Trim().ToUpper();
-if (svar2 == "C")
-{
-    Console.WriteLine("Rätt svar bra jobbat");
-    points++;
-}
-else
-{
-    Console.WriteLine("Fel svar tyvärr");
-}
-
-// Fråga 3
-Console.WriteLine("3. Vad är 3 upphöjt med 2");
-Console.WriteLine("A) 3");
-Console.WriteLine("B) 12");
-Console.WriteLine("C) 6");
-Console.WriteLine("D) 9");
-string svar3 = Console.ReadLine().Trim().ToUpper();
-if (svar3 == "D")
-{
-    Console.WriteLine("Rätt svar bra jobbat");
-    points++;
-}
-else
-{
-    Console.WriteLine("Fel svar tyvärr");
-}
-// Fråga 4
-Console.WriteLine("4. Vilket är medelvärdet av talen 2,5,8 ");
-Console.WriteLine("A) ");
-Console.WriteLine("B) ");
-Console.WriteLine("C) ");
-Console.WriteLine("D) ");
-string svar4 = Console.ReadLine().Trim().ToUpper();
-if (svar4 == "D")
-{
-    Console.WriteLine("Rätt svar bra jobbat");
-    points++;
-}
-else
-{
-    Console.WriteLine("Fel svar tyvärr");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Slutpoäng
 Console.WriteLine($"Du fick totalt {points} poäng.");
